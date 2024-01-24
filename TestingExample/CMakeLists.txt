@@ -6,19 +6,17 @@
 #        QT_QML_SINGLETON_TYPE true
 #    )
 
-qt_add_library(TestingExample STATIC)
+qt_add_resources(RESOURCE_FILES CustomComponents/Resources.qrc)
+
+#qt_add_library(TestingExample ${RESOURCE_FILES} STATIC)
 
 qt_add_qml_module(TestingExample
     URI "TestingExample"
     VERSION 1.0
-    RESOURCE_PREFIX "/"
-#    SOURCES
-#    TestingExample.h TestingExample.cpp
-    NO_GENERATE_PLUGIN_SOURCE
     QML_FILES
         CustomComponents/CustomButton.qml
-        App.qml
-        main.qml
-        Screen01.ui.qml
-        RESOURCES Resources.qrc
+    RESOURCE_PREFIX /
+    SOURCES ${RESOURCE_FILES}
+#    PLUGIN_TARGET TestingExample
+#    OUTPUT_DIRECTORY imports/TestingExample
 )

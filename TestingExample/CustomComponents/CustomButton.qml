@@ -39,7 +39,7 @@ T.Button {
 
             Image {
                 id: icon
-                source: "qrc:/test/Resources/edit.png"
+                source: "qrc:/assests/salute.jpg"
                 sourceSize: Qt.size(40,40)
             }
             Text {

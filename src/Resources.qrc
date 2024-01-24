@@ -1,9 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>Resource_Files/Images/salute.jpg</file>
-        <file>App.qml</file>
-        <file>Screen01.ui.qml</file>
-        <file>CustomComponents/CustomButton.qml</file>
-        <file>main.qml</file>
-    </qresource>
-</RCC>

@@ -16,9 +16,7 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Qml Core Widgets Quick)
 
 set(PROJECT_SOURCES
         main.cpp
-        QMLDialog.cpp
-        QMLDialog.h
-        src/Resources.qrc
+        ProjectResources.qrc
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -45,7 +43,13 @@ else()
     endif()
 endif()
 
-target_link_libraries(QMLTestOddities PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick Qt${QT_VERSION_MAJOR}::Qml)
+target_link_libraries(QMLTestOddities PRIVATE
+    Qt${QT_VERSION_MAJOR}::Widgets
+    Qt${QT_VERSION_MAJOR}::Core
+    Qt${QT_VERSION_MAJOR}::Quick
+    Qt${QT_VERSION_MAJOR}::Qml
+    TestingExample
+)
 
 set_target_properties(QMLTestOddities PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
@@ -63,5 +67,5 @@ if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(QMLTestOddities)
 endif()
 
-add_subdirectory(src)
+add_subdirectory(TestingExample)
 add_subdirectory(_Tests)

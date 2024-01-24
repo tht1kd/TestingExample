@@ -11,10 +11,8 @@ import TestingExample 1.0
 
 Rectangle {
     id: rectangle
-    width: Constants.width
-    height: Constants.height
 
-    color: Constants.backgroundColor
+    color: "white"
 
     CustomButton {
         id: button
@@ -33,7 +31,6 @@ Rectangle {
         id: label
         text: qsTr("Hello TestingExample")
         anchors.top: button.bottom
-        font.family: Constants.font.family
         anchors.topMargin: 45
         anchors.horizontalCenter: parent.horizontalCenter
 
@@ -45,14 +42,14 @@ Rectangle {
                 target: rectangle
                 property: "color"
                 to: "#2294c6"
-                from: Constants.backgroundColor
+                from: "white"
             }
 
             ColorAnimation {
                 id: colorAnimation2
                 target: rectangle
                 property: "color"
-                to: Constants.backgroundColor
+                to: "white"
                 from: "#2294c6"
             }
         }

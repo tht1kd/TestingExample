@@ -13,6 +13,7 @@ Window {
 
     Screen01 {
         id: mainScreen
+        anchors.fill: parent
     }
 
 }
